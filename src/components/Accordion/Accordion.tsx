@@ -4,26 +4,31 @@ type AccordionPropsType = {
 }
 
 function Accordion(props: AccordionPropsType) {
+return (
+            <div>
+                <AccordionTitle title={props.titleValue}/>
+                {!props.collapsed && <AccordionBody/>}
+            </div>
+)
+}
+
+/*function Accordion1(props: AccordionPropsType) {
     if (props.collapsed === true) {
         return (
             <div>
                 <AccordionTitle title={props.titleValue}/>
-                {/*<AccordionBody/>*/}
-
+                {/!*<AccordionBody/>*!/}
             </div>
         )
-    }
-    if (props.collapsed === false) {
+    } else {
         return (
             <div>
                 <AccordionTitle title={props.titleValue}/>
                 <AccordionBody/>
-
             </div>
         )
     }
-}
-
+}*/
 type AccordionTitlePropsType = {
     title: string
 }
