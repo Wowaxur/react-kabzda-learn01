@@ -1,3 +1,5 @@
+import React from "react";
+
 type RatingpropsType = {
     value: 0 | 1 | 2 | 3 | 4 | 5
     /*number*/
@@ -19,10 +21,10 @@ type StarPropsStar = {
     selected: boolean
 }
 function Star(props: StarPropsStar) {
-    console.log("Star rendering")
-    if(props.selected){
-        return  (<span><b>&#127775; </b></span>)
-    }else  return (<span>&#11088; </span>)
+
+    return <span>
+            {props.selected ? <b>&#127775; </b> : <b>&#11088; </b>}
+        </span>
 }
 
 export default Rating

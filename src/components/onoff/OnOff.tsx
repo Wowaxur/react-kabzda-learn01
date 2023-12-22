@@ -1,24 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 type OnOffPropsType ={
-    title?: string
-    turn : boolean
+    //title?: string
+    //turn : boolean
 }
 
 const OnOff = (props: OnOffPropsType) => {
-    return (
-        <div className={'Buttons'}>
-            <button style={{ backgroundColor: props.turn ? 'green': 'auto'}}>ON</button>
-            <button style={{ backgroundColor: !props.turn ? 'red' : 'auto' }}>OFF</button>
-            <div style={{
-                margin: "10px",
-                width: '10px',
-                height: '10px',
-                borderRadius: '50%',
-                backgroundColor: props.turn ? 'green' : 'red',
-            }} />
+    console. log("OnOff rendering");
+   let[on, setOn]= useState(false)
+
+    console.log("on:"+ on) ;
+
+    const onStyle = { backgroundColor: on ? 'green': 'white'};
+    const offStyle = { backgroundColor: on ? 'white' : 'red'};
+    const indicatorStyle = {
+        margin: "10px",
+        width: '20px',
+        height: '20px',
+        borderRadius: '50%',
+        border:'1px solid black',
+        backgroundColor: on ? 'green' : 'red',
+    };
+
+
+    return <div className={'Buttons'}>
+            <button onClick={()=>{setOn(true)}} style={onStyle} >ON</button>
+            <button onClick={()=>{setOn(false)}} style={offStyle}>OFF</button>
+            <div style={indicatorStyle} />
         </div>
-    );
 };
 
 export default OnOff;
