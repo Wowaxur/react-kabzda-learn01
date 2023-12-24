@@ -1,10 +1,10 @@
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
 import Rating from "./components/Rating/Rating";
 import PageTitle from "./components/AppTitle/AppTitle";
 import OnOff from "./components/onoff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import UncontrolledRating from "./components/UncontrolledRating/UncontrolledRating";
+import Accordion from "./components/Accordion/Accordion";
 
 function App() {
     // debugger
