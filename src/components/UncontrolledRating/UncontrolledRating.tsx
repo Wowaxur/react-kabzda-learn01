@@ -1,10 +1,7 @@
 import {useState} from "react";
 
-type RatingpropsType = {
-  //  value: 0 | 1 | 2 | 3 | 4 | 5
-    /*number*/
-}
-function UncontrolledRating(props: RatingpropsType) {
+
+function UncontrolledRating() {
 
     let [value, setValue] = useState(0)
     return (<div>
@@ -25,7 +22,7 @@ type StarPropsStar = {
 }
 function Star(p: StarPropsStar) {
     return  <span onClick={()=>{p.setValue(p.Value)}}>
-        {p.selected ? <b>&#127775;  </b>: <b>&#11088;  </b>}
+        {p.selected ? <b>&#127775; </b>: <b>&#11088;  </b>}
     </span>
 }
 
