@@ -1,28 +1,37 @@
 import './App.css';
-import Rating from "./components/Rating/Rating";
+import Rating, {RatingValueType} from "./components/Rating/Rating";
 import PageTitle from "./components/AppTitle/AppTitle";
-import OnOff from "./components/onoff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import UncontrolledRating from "./components/UncontrolledRating/UncontrolledRating";
 import Accordion from "./components/Accordion/Accordion";
+import {useState} from "react";
+import UncontrolledOnOff from './components/uncontrolledOnOff/OnOff';
+import OnOff from "./components/CallbackOnOff/OnOff";
 
 function App() {
-    // debugger
+    let [accordinToggle, setAccordionToggle] = useState(false)
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(3)
+    let [switcher, setSwitcher] = useState(true)
     return (
 
         <div className={'MainContainer'}>
-            <PageTitle title={'Admin'}/>
-            <PageTitle title={'User'}/>
-            <Accordion titleValue={'Меню'} collapsed={true}/>
-            <Accordion titleValue={'Доставка'} collapsed={false}/>
-            <Rating value={4}/>
+            <PageTitle title={'Hello World'}/>
+            {/*<Accordion titleValue={'Меню'} collapsed={true}/>*/}
+            <Accordion titleValue={'Доставка'}
+                       collapsed={accordinToggle}
+                       onChange={()=>{setAccordionToggle(!accordinToggle)}}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
             <br/>
-            <OnOff />
+            <UncontrolledOnOff onChange={(setSwitcher)}/>
+            {switcher.toString()}
             <br/>
             <UncontrolledAccordion titleValue={'Work'}/>
             <br/>
             <UncontrolledRating/>
-
+            <br/>
+            <OnOff on={switcher}
+                   onChange={setSwitcher}
+            />
         </div>
     );
 }
