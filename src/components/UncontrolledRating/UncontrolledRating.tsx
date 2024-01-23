@@ -1,7 +1,9 @@
 import {useState} from "react";
 
 
+
 function UncontrolledRating() {
+
 
     let [value, setValue] = useState(0)
     return (<div>
@@ -12,9 +14,8 @@ function UncontrolledRating() {
             <Star selected={value > 4} setValue={()=>{setValue(5)}}/>
         </div>
     )
-
-
 }
+
 
 type StarPropsStar = {
     selected: boolean
@@ -31,6 +32,7 @@ function Star(p: StarPropsStar) {
 }
 
 export default UncontrolledRating
+
 
 
 
