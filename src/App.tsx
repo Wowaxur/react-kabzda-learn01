@@ -12,23 +12,26 @@ function App() {
     let [accordinToggle, setAccordionToggle] = useState(false)
     let [ratingValue, setRatingValue] = useState<RatingValueType>(3)
     let [switcher, setSwitcher] = useState(true)
+    let i
+
     return (
 
         <div className={'MainContainer'}>
             <PageTitle title={'Hello World'}/>
             {/*<Accordion titleValue={'Меню'} collapsed={true}/>*/}
             <Accordion titleValue={'Доставка'}
+                       items={[]}
                        collapsed={accordinToggle}
-                       onChange={()=>{setAccordionToggle(!accordinToggle)}}/>
+                       onChange={()=>{setAccordionToggle(!accordinToggle)}}
+                       onClick={a=>a}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <br/>
-            <UncontrolledOnOff onChange={(setSwitcher)}/>
-            {switcher.toString()}
-            <br/>
-            <UncontrolledAccordion titleValue={'Work'}/>
-            <br/>
-            <UncontrolledRating/>
-            <br/>
+            {/*<UncontrolledOnOff onChange={(setSwitcher)}/>*/}
+            {/*{switcher.toString()}*/}
+            {/*<br/>*/}
+            {/*<UncontrolledAccordion titleValue={'Work'}/>*/}
+            {/*<br/>*/}
+            {/*<UncontrolledRating/>*/}
             <OnOff on={switcher}
                    onChange={setSwitcher}
             />
