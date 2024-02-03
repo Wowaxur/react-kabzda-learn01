@@ -13,8 +13,8 @@ type ItemType = {
 
     }
 
-
     function Accordion(props: AccordionPropsType) {
+
         return (
             <div>
                 <AccordionTitle title={props.titleValue}

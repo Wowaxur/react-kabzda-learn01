@@ -19,19 +19,19 @@ function App() {
         <div className={'MainContainer'}>
             <PageTitle title={'Hello World'}/>
             {/*<Accordion titleValue={'Меню'} collapsed={true}/>*/}
-            <Accordion titleValue={'Доставка'}
+           {/* <Accordion titleValue={'Доставка'}
                        items={[]}
                        collapsed={accordinToggle}
                        onChange={()=>{setAccordionToggle(!accordinToggle)}}
-                       onClick={a=>a}/>
-            <Rating value={ratingValue} onClick={setRatingValue}/>
+                       onClick={a=>a}/>*/}
+            {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
             <br/>
             {/*<UncontrolledOnOff onChange={(setSwitcher)}/>*/}
             {/*{switcher.toString()}*/}
             {/*<br/>*/}
-            {/*<UncontrolledAccordion titleValue={'Work'}/>*/}
+            <UncontrolledAccordion titleValue={'Work'}/>
             {/*<br/>*/}
-            {/*<UncontrolledRating/>*/}
+            <UncontrolledRating/>
             <OnOff on={switcher}
                    onChange={setSwitcher}
             />
