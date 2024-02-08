@@ -1,4 +1,3 @@
-/*
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -19,25 +18,7 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-*/
 
 
-import {combineReducers, createStore} from 'redux'
 
-let initialState = {items: [{name: 'Dimych'}, {name: 'Ignat'}]}
-const usersReducer = (state = initialState, action: any) => {
-    return state
-}
 
-const store = createStore(combineReducers({
-    users: usersReducer
-}))
-
-store.subscribe(() => {
-    const state = store.getState()
-    console.log(state)
-})
-
-store.dispatch({type: 'ANY'})
-
-//Что нужно написать вместо XXX, чтобы получить актуальный стейт?
